@@ -28,8 +28,11 @@
           {%- include footer.html -%}
         </div>
       </div>
+      <div id="table-of-contents">
+        {% toc %}
+      </div>
       <section>
-      {{ content }}
+      {{ content | toc }}
       </section>
       <footer>
         {%- include footer.html -%}

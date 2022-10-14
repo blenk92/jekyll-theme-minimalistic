@@ -9,6 +9,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jemoji
+  - jekyll-toc
 
 platforms:
   - name: GitHub
