@@ -126,7 +126,7 @@ ul.link:last-child {
 }
 
 .wrapper {
-  width: 860px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -255,7 +255,7 @@ strong {
 }
 
 section {
-  width: 550px;
+  width: calc(90% - 250px);
   float: right;
   padding-bottom:30px;
 }
