@@ -11,11 +11,15 @@
   <h3 class="sidebar-h3">Contents:</h3>
   <ul class="content">
   {%- for item in site.navigation %}
-    <li><a href="{{ item.link }}">{{ item.name }}</a>
+    <li><script type="text/javascript">
+        document.write("{{ item.name }}".link(window.location.origin + "/{{ item.link }}"));
+    </script>
         {% if item.sublist %}
         <ul class="sublist">
             {%- for subitem in item.sublist %}
-            <li><a href="{{ subitem.link }}">{{ subitem.name }}</a></li>
+            <li><script type="text/javascript">
+                document.write("{{ subitem.name }}".link(window.location.origin + "/{{ subitem.link }}"));
+            </script></li>
             {%- endfor %}
         </ul>
         {% endif %}
