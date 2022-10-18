@@ -19,3 +19,5 @@ gem "webrick"
 gem "jemoji"
 gem "kramdown-parser-gfm"
 gem 'jekyll-toc'
+gem 'jekyll-email-protect'
+
