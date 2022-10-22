@@ -1,8 +1,11 @@
 <div class="link-wrapper-mobile">
     {% if site.platforms %}
     <ul class="link">
+    {% if site.email %}
+    <li><a href="mailto:{{ site.email | encode_mail }}"><i class="fa-solid fa-envelope"></i>&nbsp;Mail</a></li>
+    {% endif %}
     {%- for platform in site.platforms %}
-    <nobr><a href="{{ platform.link }}" rel="me">{{ platform.icon }}&nbsp;{{ platform.name }}</a>
+    <li><a href="{{ platform.link }}">{{ platform.icon }}&nbsp;{{ platform.name }}</a></li>
     {%- unless forloop.last %}<span style="margin-left: 6px;"></span>{% endunless %}</nobr>
     {%- endfor %}
     </ul>
@@ -12,16 +15,20 @@
     <h3 class="sidebar-h3">Contents:</h3>
     <ul class="content">
     {%- for item in site.navigation %}
-      <li><a href="{{ item.link }}">{{ item.name }}</a>
-          {% if item.sublist %}
-          <ul class="sublist">
-              {%- for subitem in item.sublist %}
-              <li><a href="{{ subitem.link }}">{{ subitem.name }}</a></li>
-              {%- endfor %}
-          </ul>
-          {% endif %}
-      </li>
-    {%- endfor %}
+        <li><script type="text/javascript">
+            document.write("{{ item.name }}".link(window.location.origin + "/{{ item.link }}"));
+        </script>
+            {% if item.sublist %}
+            <ul class="sublist">
+                {%- for subitem in item.sublist %}
+                <li><script type="text/javascript">
+                    document.write("{{ subitem.name }}".link(window.location.origin + "/{{ subitem.link }}"));
+                </script></li>
+                {%- endfor %}
+            </ul>
+            {% endif %}
+        </li>
+      {%- endfor %}
     </ul>
     {% endif %}
 </div>
